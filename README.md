@@ -54,12 +54,25 @@ You may choose which toolbar items to include:
 				]
 			]
     });
+    
+Settings
+--------
+
+**Auto fix toolbar**
 
 The toolbar will be fixed on the top of the bowser window when the editor scrolls out by default.
 To disable this behavior set the `fix-toolbar-on-top` option to `false`:
 
     $('textarea').html5_editor({
       'fix-toolbar-on-top': false
+    });
+    
+**Left toolbar**
+
+The toolbar is on top by default, to put it on the left set the `left-toolbar` option to `true`:
+
+    $('textarea').html5_editor({
+      'left-toolbar': true
     });
 
 
