@@ -1,6 +1,8 @@
 HTML5 Editor
 ============
 
+Fork of the HTML5 Editor made by Nuno Baldaia to add an option to put the toolbar on the left.
+
 HTML5 Editor is a [jQuery](http://jquery.com/) plugin that transforms any `textarea` into a WYSIWYG editor. It is simply based on the HTML5's [`contenteditable`](http://html5demos.com/contenteditable) attribute, a tiny layer of JavaScript and CSS. As such, it is NOT COMPATIBLE WITH OLDER BROWSERS!!
 
 Usage
