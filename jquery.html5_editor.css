@@ -23,7 +23,6 @@
 	z-index: 10;
 	background-color: #fff;
   border: 1px solid #c9d0d6;
-  border-top: none;
 	-webkit-border-bottom-right-radius: 3px;
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px;
@@ -61,9 +60,8 @@
 }
 
 .html5-editor-container .toolbar.left {
-	left: -52px; top: 5px;
+	left: -62px; top: 0;
 	width: 50px;
-  border-top: inherit;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
