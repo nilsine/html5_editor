@@ -7,16 +7,11 @@
   */
 .html5-editor-container {
 	position: relative;
-	padding: 0 10px;
-	border: 1px solid #c9d0d6;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 
 .html5-editor-container .html5-editor {
 	min-height: 100px;
-	margin: 40px 0 10px;
+	padding-top: 30px;
 }
 
 /*
@@ -62,9 +57,8 @@
  */
 .html5-editor-container .html5-editor.left-toolbar {
 	min-height: 100px;
-	margin: 10px 0;
+	padding-top: 0;
 }
-
 
 .html5-editor-container .toolbar.left {
 	left: -52px; top: 5px;
