@@ -21,7 +21,7 @@
 }
 
 /*
-  Toolbar
+  Top toolbar
   */
 .html5-editor-container .toolbar {
 	position: absolute;
@@ -57,14 +57,61 @@
 	border-right: none;
 }
 
+
+/*
+ * Left toolbar
+ */
+.html5-editor-container .html5-editor.left-toolbar {
+	min-height: 100px;
+	margin: 10px 0;
+}
+
+
+.html5-editor-container .toolbar.left {
+	left: -52px; top: 5px;
+	width: 50px;
+  border-top: inherit;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.html5-editor-container .toolbar.left ul {
+  display: block;
+  margin-bottom: 15px;
+  margin-right: 0;
+}
+
+.html5-editor-container .toolbar.left ul:last-child {
+	margin-top: 0;
+}
+
+.html5-editor-container .toolbar.left li {
+  display: block;
+  text-align: right;
+}
+
+.html5-editor-container .toolbar.left li:last-child {
+	
+}
+
+
+
 .html5-editor-container .toolbar a {
   font-family: 'Times New Roman', serif;
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
   line-height: 21px;
-  padding: 7px 6px;
+  padding: 3px;
   text-shadow: 0 1px 1px #fff;
   color: #666;
+  display: block;
 }
 
 .html5-editor-container .toolbar a:hover {

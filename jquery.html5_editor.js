@@ -41,15 +41,22 @@
     					['remove', '⌫', 'Remove Formating']
     				]
     			],
-      		'fix-toolbar-on-top': true
+      		'fix-toolbar-on-top': true,
+      		'left-toolbar': false
     		}, options);
 
 			return this.each(function() {
 				var $this = $(this);
 				var $editorContainer = $('<div class="html5-editor-container"></div>').insertAfter($this);
 				var $toolbar = $('<div class="toolbar"></div>').appendTo($editorContainer);
+				
+				if(settings['left-toolbar']) {
+					$toolbar.addClass('left');
+					$this.addClass('left-toolbar');
+				}
+				
 				if(settings['fix-toolbar-on-top']) {
-            $toolbar.fixOnTop();
+          $toolbar.fixOnTop(settings);
         }
         
 				$.each(settings['toolbar-items'], function(index1, items) {
@@ -193,17 +200,27 @@
   };
   
   
-	$.fn.fixOnTop = function(options) {
+	$.fn.fixOnTop = function(settings) {
 		return this.each(function() {
       var $this = $(this);
       var origPosition = $this.css('position');
       $(window).scroll(function() {
-        if ($(window).scrollTop() > $this.parent().offset().top && $(window).scrollTop() < $this.parent().offset().top + $this.parent().height() - $this.height()) {
+        if ($(window).scrollTop() > $this.parent().offset().top && (($(window).scrollTop() < $this.parent().offset().top + $this.parent().height() - $this.height()) || settings['left-toolbar'])) {
           if (!$this.hasClass('fixed')) {
             $this.addClass('fixed');
+            if (settings['left-toolbar']) {
+	            // translate container local left coordinate to global (browser) coordinate for fixed position
+	            var newLeft = $this.offset().left + $this.parent().offset().left;
+	      			$this.css('left', newLeft);
+	      		}
           }
         } else {
           if ($this.hasClass('fixed')) {
+          	if (settings['left-toolbar']) {
+	          	// translate container global left coordinate to local coordinate
+	          	var newLeft = $this.offset().left - $this.parent().offset().left;
+	      			$this.css('left', newLeft);
+      			}
             $this.removeClass('fixed');
           }
         }
