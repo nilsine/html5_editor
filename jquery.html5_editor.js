@@ -50,11 +50,6 @@
 				var $editorContainer = $('<div class="html5-editor-container"></div>').insertAfter($this);
 				var $toolbar = $('<div class="toolbar"></div>').appendTo($editorContainer);
 				
-				if(settings['left-toolbar']) {
-					$toolbar.addClass('left');
-					$this.addClass('left-toolbar');
-				}
-				
 				if(settings['fix-toolbar-on-top']) {
           $toolbar.fixOnTop(settings);
         }
@@ -135,6 +130,11 @@
 				$contenteditable.bind('blur', function() { $this.val($(this).html()); });
 				$contenteditable.html($this.val());
 				$this.hide();
+				
+				if(settings['left-toolbar']) {
+					$toolbar.addClass('left');
+					$contenteditable.addClass('left-toolbar');
+				}
 			});
 		},
 		bold: function() {
