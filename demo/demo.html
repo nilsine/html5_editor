@@ -3,17 +3,38 @@
 <head>
   <meta charset="utf-8">
   <title>HTML5 Editor</title>
-  <link rel="stylesheet" href="jquery.html5_editor.css">
+  <link rel="stylesheet" href="../jquery.html5_editor.css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <style type="text/css" media="screen">
   body {
-    font-family: Georgia, serif;
+    font-family: Georgia, sans-serif;
     color: #666;
     margin-bottom: 1000px;
+    background: url('vichy.png');
+  }
+  
+  h1 {
+  	font-family: 'Josefin Sans', sans-serif;
+  	color: #3CB73C;
+  	text-shadow: #000 1px 1px 0;
+  }
+  
+  h2, h3, h4, h5 {
+  	font-family: 'Josefin Sans', sans-serif;
+  	color: #3CB73C;
+  }
+  
+  .html5-editor-container, .toolbar {
+  	border: 1px solid #fff; !important
   }
 
   #container {
     width: 768px;
-    margin: 100px auto;
+    margin: 30px auto;
+  }
+  
+  #container div {
+  	margin-bottom: 10px;
   }
   </style>	
 </head>
@@ -22,9 +43,22 @@
   <div id="container">
 
       <h1>HTML5 Editor</h1>
-      <p><a href="http://github.com/nunobaldaia/html5_editor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a></p>
-      <textarea>
-        <h1>Pellentesque</h1>
+      <p><a href="https://github.com/nilsine/html5_editor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a></p>
+      <textarea id="top-toolbar-editor">
+        <h1>Editor with toolbar on top</h1>
+        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+        <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.</p>
+
+        <h2>Porta Ullamcorper</h2>
+
+        <p>Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+        <blockquote>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.</blockquote>
+      </textarea>
+      
+      <textarea id="left-toolbar-editor">
+        <h1>Editor with toolbar on left</h1>
         <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 
         <p>Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.</p>
@@ -38,10 +72,14 @@
   </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="jquery.html5_editor.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../jquery.html5_editor.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
   $(function(){
-    $('textarea').html5_editor();
+  	
+    $('#top-toolbar-editor').html5_editor();
+    
+    $('#left-toolbar-editor').html5_editor( { 'left-toolbar': true } );
+    
   });
   </script>
 </body>
