@@ -153,6 +153,8 @@ $('[contenteditable]').live('focus', function() {
 								methods.insertVideo.apply(this);
 								break;
 							}
+							// trigger editor change event
+							$contenteditable.trigger('change');
 							return false;
 						}).appendTo($toolbarItems);
 					});
