@@ -256,25 +256,27 @@
       var $this = $(this);
       var origPosition = $this.css('position');
       $(window).scroll(function() {
-        if ($(window).scrollTop() > $this.parent().offset().top && (($(window).scrollTop() < $this.parent().offset().top + $this.parent().height() - $this.height()) || settings['left-toolbar'])) {
-          if (!$this.hasClass('fixed')) {
-            $this.addClass('fixed');
-            if (settings['left-toolbar']) {
-	            // translate container local left coordinate to global (browser) coordinate for fixed position
-	            var newLeft = $this.offset().left + $this.parent().offset().left;
-	      			$this.css('left', newLeft);
-	      		}
-          }
-        } else {
-          if ($this.hasClass('fixed')) {
-          	if (settings['left-toolbar']) {
-	          	// translate container global left coordinate to local coordinate
-	          	var newLeft = $this.offset().left - $this.parent().offset().left;
-	      			$this.css('left', newLeft);
-      			}
-            $this.removeClass('fixed');
-          }
-        }
+      	if ($this.is(':visible')) {
+	        if ($(window).scrollTop() > $this.parent().offset().top && ($(window).scrollTop() < $this.parent().offset().top + $this.parent().height())) {
+	          if (!$this.hasClass('fixed')) {
+	            $this.addClass('fixed');
+	            if (settings['left-toolbar']) {
+		            // translate container local left coordinate to global (browser) coordinate for fixed position
+		            var newLeft = $this.offset().left + $this.parent().offset().left;
+		      			$this.css('left', newLeft);
+		      		}
+	          }
+	        } else {
+	          if ($this.hasClass('fixed')) {
+	          	if (settings['left-toolbar']) {
+		          	// translate container global left coordinate to local coordinate
+		          	var newLeft = $this.offset().left - $this.parent().offset().left;
+		      			$this.css('left', newLeft);
+	      			}
+	            $this.removeClass('fixed');
+	          }
+	        }
+	      }
       });
 		});
 	};
