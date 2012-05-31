@@ -74,6 +74,14 @@ The toolbar is on top by default, to put it on the left set the `left-toolbar` o
     $('textarea').html5_editor({
       'left-toolbar': true
     });
+    
+**Auto-hide toolbar**
+
+To make the toolbar hidden by default and show it when user click the editor, set the `auto-hide-toolbar` option to `true`:
+
+    $('textarea').html5_editor({
+      'auto-hide-toolbar': true
+    });
 
 
 Active Admin
