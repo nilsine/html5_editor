@@ -82,6 +82,18 @@ To make the toolbar hidden by default and show it when user click the editor, se
     $('textarea').html5_editor({
       'auto-hide-toolbar': true
     });
+    
+**Custom function**
+
+You can add your custom functions in the toolbar by adding a function in the fourth parameter in the toolbar items array lines:
+
+    [...]
+    
+    ['underline', 'U', 'Underline'],
+    ['remove', '⌫', 'Remove Formating'],
+    ['custom', 'Cust', 'Custom function', function() { alert('My custom function'); }]
+    
+    [...]
 
 
 Active Admin
