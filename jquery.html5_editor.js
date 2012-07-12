@@ -35,6 +35,16 @@ $('[contenteditable]').live('focus', function() {
     return $this;
 });
 
+
+/*
+ * From http://stackoverflow.com/a/7356528/270433
+ */
+function isFunction(functionToCheck) {
+ var getType = {};
+ return functionToCheck && getType.toString.call(functionToCheck) == '[object Function]';
+}
+
+
 	
 (function($) {
 
@@ -152,6 +162,10 @@ $('[contenteditable]').live('focus', function() {
 							case 'video':
 								methods.insertVideo.apply(this);
 								break;
+						  case 'custom':
+						  	// call custom function
+						  	if (isFunction(item[3])) item[3]();
+						  	break;
 							}
 							// trigger editor change event
 							$contenteditable.trigger('change');
