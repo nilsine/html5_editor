@@ -32,6 +32,63 @@
   #container div {
   	margin-bottom: 10px;
   }
+  
+  /*
+   * From http://people.mozilla.com/~jbalogh/ribbon/ribbon.html
+   */
+	
+	.ribbon-holder {
+	  position: absolute;
+	  top: 0;
+	  overflow: hidden;
+	  height: 10em;
+	}
+	
+	.right.ribbon-holder {
+	  right: 0;
+	}
+	
+	.ribbon,
+	.ribbon:hover {
+	  text-decoration: none;
+	}
+	
+	.ribbon {
+	  font-family: sans-serif;
+	  font-size: 14px;
+	  opacity: 0.95;
+	
+	  padding: 0.25em 0;
+	  position: relative;
+	  top: 2.5em;
+	
+	  /* Defaults friendly for white pages. */
+	  -moz-box-shadow: 0 0 13px #888;
+	  -webkit-box-shadow: 0 0 13px #888;
+	  color: #FFF;
+	  display: block;
+	  line-height: 1.35em;
+	}
+	
+	.ribbon .text {
+	  padding: 0.1em 2em;
+	}
+	
+	.right .ribbon {
+	  -moz-transform: rotate(45deg);
+	  -webkit-transform: rotate(45deg);
+	  right: -2.6em;
+	}
+	
+	.green.ribbon {
+	  background-color: #006e00;
+	  background: -webkit-gradient(linear, left bottom, left top, from(#006e00), to(#007200));
+	}
+	
+	.green.ribbon .text {
+	  border: 1px solid #6bac6b;
+	}
+
   </style>	
 </head>
 <body>
@@ -39,7 +96,7 @@
   <div id="container">
 
       <h1>HTML5 Editor</h1>
-      <p><a href="https://github.com/nilsine/html5_editor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a></p>
+      
       <textarea id="top-toolbar-editor">
         <h1>Editor with toolbar on top</h1>
         
@@ -75,6 +132,13 @@
         </ul>
       </textarea>
   </div>
+  
+  <div class="right ribbon-holder">
+  	<a href="https://github.com/nilsine/html5_editor" class="green ribbon">
+    	<span class="text">Fork me on GitHub</span>
+    </a>
+  </div>
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="../jquery.html5_editor.js" type="text/javascript" charset="utf-8"></script>
