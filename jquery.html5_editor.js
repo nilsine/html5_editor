@@ -1,7 +1,7 @@
 ﻿/*
   HTML5 Editor
   
-  Author: Nuno Baldaia & Jean-philippe Lannoy
+  Authors: Nuno Baldaia & Jean-philippe Lannoy
   Copyright: Copyright (c) 2012 Nuno Baldaia
   License: MIT License (http://www.opensource.org/licenses/mit-license.php)
   */
@@ -22,11 +22,11 @@
  * Add a change event on contenteditable elements
  * From http://stackoverflow.com/a/6263537/270433
  */
-$('[contenteditable]').on('focus', function() {
+$('body').on('focus', '.html5-editor', function() {
     var $this = $(this);
     $this.data('before', $this.html());
     return $this;
-}).on('blur keyup paste', function() {
+}).on('blur keyup paste', '.html5-editor', function() {
     var $this = $(this);
     if ($this.data('before') !== $this.html()) {
         $this.data('before', $this.html());
